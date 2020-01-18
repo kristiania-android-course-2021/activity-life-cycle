@@ -1,8 +1,15 @@
 package no.shortcut.activity_life_cycle
 
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_second.*
+import java.lang.Exception
+
 
 class SecondActivity : AppCompatActivity() {
 
@@ -11,6 +18,16 @@ class SecondActivity : AppCompatActivity() {
         setContentView(R.layout.activity_second)
 
         Log.d(this.javaClass.simpleName, "onCreate")
+
+        btn_link.setOnClickListener {
+            Intent(Intent.ACTION_VIEW, Uri.parse("https://google.com")).also {
+                try {
+                    startActivity(it)
+                } catch (e: ActivityNotFoundException){
+                    Toast.makeText(this@SecondActivity, "No browser installed in your phone. Please install one and try again.", Toast.LENGTH_LONG).show()
+                }
+            }
+        }
     }
 
     override fun onStart() {
