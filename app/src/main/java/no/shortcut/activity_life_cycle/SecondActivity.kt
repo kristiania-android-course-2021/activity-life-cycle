@@ -8,7 +8,6 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_second.*
-import java.lang.Exception
 
 
 class SecondActivity : AppCompatActivity() {
@@ -24,7 +23,10 @@ class SecondActivity : AppCompatActivity() {
                 try {
                     startActivity(it)
                 } catch (e: ActivityNotFoundException){
-                    Toast.makeText(this@SecondActivity, "No browser installed in your phone. Please install one and try again.", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@SecondActivity,
+                        "No browser installed in your phone. Please install one and try again.",
+                        Toast.LENGTH_LONG)
+                        .show()
                 }
             }
         }
