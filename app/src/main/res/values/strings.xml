@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">activity-life-cycle</string>
+    <string name="open_next_screen">Open next screen</string>
+    <string name="this_is_the_second_activity">This is the second activity</string>
 </resources>
