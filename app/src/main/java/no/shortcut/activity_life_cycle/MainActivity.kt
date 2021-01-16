@@ -3,8 +3,8 @@ package no.shortcut.activity_life_cycle
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,7 +13,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         Log.d(this.javaClass.simpleName, "onCreate")
 
-        btn_open_second.setOnClickListener {
+        var button = findViewById<Button>(R.id.btn_open_second)
+
+        button.setOnClickListener {
             Intent(this, SecondActivity::class.java).apply {
                 startActivity(this)
             }
